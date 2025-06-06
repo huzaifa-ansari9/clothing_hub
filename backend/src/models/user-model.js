@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-// models/User.js
 const userSchema = new mongoose.Schema(
   {
     username: {
@@ -31,6 +30,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       enum: ["customer", "admin"],
       default: "customer",
+    },
+    phone: {
+        type: Number,
+        required: true
     },
     addressDetails: {
         address: String,

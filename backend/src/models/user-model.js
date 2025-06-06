@@ -32,14 +32,26 @@ const userSchema = new mongoose.Schema(
       default: "customer",
     },
     phone: {
-        type: Number,
-        required: true
+      type: Number,
+      required: true,
     },
+    cart: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
+      },
+    ],
+    orders: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Order"
+      }
+    ],
     addressDetails: {
-        address: String,
-        city: String,
-        state: String,
-        pincode: Number, 
+      address: String,
+      city: String,
+      state: String,
+      pincode: Number,
     },
   },
   { timestamps: true }
